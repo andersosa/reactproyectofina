@@ -43,3 +43,36 @@
 .read-the-docs {
   color: #888;
 }
+
+.main-container{
+
+  display: flex;
+  justify-content: center;
+  background-color: rgb(69, 71, 65);
+  height: 10em;
+  width: 15rem;
+  }
+
+  .form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+  }
+
+  .form-container section{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-container button{
+    border-radius: 15px;
+    height: 2rem;
+    
+  }
+  .form-container input{
+    border-radius: 25px;
+    height: 1rem;
+    padding: 5px;
+    
+  }

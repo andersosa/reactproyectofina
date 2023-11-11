@@ -9,10 +9,13 @@ import Error404 from "./screens/Error404/Error404";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
+    
+    <>   
+    
+      <BrowserRouter>  
+                            
         <MyNav />
-
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productos" element={<Products />} />
@@ -21,7 +24,8 @@ function App() {
         </Routes>
 
         <Footer />
-      </BrowserRouter>
+      
+                   </BrowserRouter>
     </>
   );
 }
