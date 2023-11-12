@@ -1,53 +1,51 @@
 import React from "react";
-/*import { Form, Link } from "react-router-dom";*/
+import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button'; 
+import Form from 'react-bootstrap/Form'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Home() {
-   
-  function App() {
-
-    function handleRegister (e) {
-      e.preventDefault();
-      /*Este boton tiene que recolectarme los datos */
-      console.log("hice click en registrar");
-
-    
-    }
-
-
-
-  }
-
+const Home = ({ handleInput, handleRegister }) => {
   return (
+    <div className="container d-flex row justify-content-center align-items-center  vh-100">
+      <div className="card p-4">
+        <h2 className="text-center mb-4">Registro</h2>
+        <Form onSubmit={handleRegister}>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              input
+              name="Email"
+              type="email"
+              placeholder="Enter email"
+              onChange={(e) => handleInput(e)}
+            />
+            <Form.Text className="text-muted">
+              Nunca compartiremos su correo electrónico con nadie más.
+            </Form.Text>
+          </Form.Group>
 
-       <div>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvL6Ti7xq3Ta1OisRCPqSLB3t4x8fdQyZx78vuAhkNgHxtoXXHZ9X-8QaVPiDtLL92n34&usqp=CAU" width="600px" CentimageWidth="0px" height="150px" />
-      
-      <div className="main-container">
-        <form className="form-container" action="">
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control
+              input
+              name="Contraseña"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => handleInput(e)}
+            />
+          </Form.Group>
 
-          {/*mailk */}
-            <section>
-            <span>Email</span>
-             <input type="email" />
-            </section> 
+          <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check type="checkbox" label="Recordar datos" />
+          </Form.Group>
 
-              {/*contraseña*/}
-              
-             <section>
-              <span>contraseña</span>
-              <input type="Password"/> 
-              </section>
-
-              {/*boton enviar*/}
-
-              <section>
-                <button onClick={e=> handleRegister(e)}>registrar</button>
-              </section>
-                              
-              </form>                                    
-                   </div>
-
-   
+          <Button variant="primary" type="submit">
+            Registrar
+          </Button>
+        </Form>
+      </div>
     </div>
   );
-}
+};
+
+export default Home;
