@@ -14,6 +14,18 @@ function App() {
   function handleRegister(e) {
     e.preventDefault();
     console.log (input);
+    fetch("http://localhost:3000/user", {
+      method: "POST" ,
+      body: JSON.stringify(input),
+      headers: {
+        
+      },
+    })
+
+    .then((res) => res.json())
+    .catch((error) => console.error("Error:",error))
+    .then((response) => console.log("Success:",response));
+    
     // Lógica para el registro...
   }
 
