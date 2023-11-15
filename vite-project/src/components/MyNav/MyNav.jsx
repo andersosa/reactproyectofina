@@ -15,7 +15,7 @@ export default function MyNav() {
         Home
       </NavLink>
       <NavLink
-        to={"/productos"}
+        to={"/carros"}
         className={({ isActive }) => (isActive ? "active-btn" : "disabled-btn")}
       >
         Productos
